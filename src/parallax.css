@@ -1,0 +1,42 @@
+/* Additional styles for parallax image effects - preventing style conflicts */
+.parallax-image-wrapper {
+  position: relative !important; /* Force position to be relative */
+  overflow: hidden !important;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  height: 350px !important;
+}
+
+.parallax-gallery {
+  position: relative !important;
+  padding: 1rem 0;
+}
+
+/* Only apply transition to specific properties to avoid conflicts */
+.parallax-image-wrapper img {
+  transition: filter 0.2s ease-out !important;
+}
+
+/* Make sure grid and container positioning is correct */
+.parallax-gallery .grid {
+  position: relative !important;
+  display: grid !important;
+  row-gap: 4rem !important; /* Increased spacing between rows */
+}
+
+/* Force positioning on all container elements */
+section, .section {
+  position: relative !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .parallax-image-wrapper {
+    height: 250px !important;
+    margin-bottom: 1rem;
+  }
+  
+  .parallax-gallery .grid > div {
+    margin-bottom: 3rem;
+  }
+}
